@@ -6,12 +6,16 @@ pipeline {
                 echo "monorepo"
             }
         }
-        stage('Trigger Helm Charts'){
-            steps{
-                script{
-                    build job: "../Helm-Charts/helm1/${BRANCH_NAME}"
-                }
+        stage('Deploy Helm Charts'){
+          when {
+            branch 'master'
+          }
+          steps{
+            script{
+                build job: "../Helm-Charts/helm1/${BRANCH_NAME}"
+                build job: "../Helm-Charts/helm2/${BRANCH_NAME}"
             }
-        }
-    }
+          }
+      }
+   }
 }
