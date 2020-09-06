@@ -9,7 +9,7 @@ pipeline {
         stage('Trigger Helm Charts'){
             steps{
                 script{
-                    build job: "../argo/helm1/${BRANCH_NAME}"
+                    build job: "../Helm-Charts/helm1/${BRANCH_NAME}"
                 }
             }
         }
