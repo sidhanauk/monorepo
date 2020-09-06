@@ -1,10 +1,10 @@
-pipeline{
-agents any
-stages{
-stage('Print'){
-steps{
-echo "monorepo"
-}
-}
-}
+pipeline {
+    agent { any } 
+    stages {
+        stage('Example Build') {
+            steps {
+                echo "monorepo"
+            }
+        }
+    }
 }
