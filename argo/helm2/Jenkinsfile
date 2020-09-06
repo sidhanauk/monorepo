@@ -6,12 +6,5 @@ pipeline {
                 echo "Install Helm 2"
             }
         }
-        stage('Trigger Helm Charts'){
-            steps{
-                script{
-                    build job: "../Helm-Charts/helm1/${BRANCH_NAME}"
-                }
-            }
-        }
     }
 }
