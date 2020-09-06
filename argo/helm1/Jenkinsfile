@@ -1,0 +1,10 @@
+pipeline {
+    agent any
+    stages {
+        stage('Helm1: install') {
+            steps {
+                echo "Install Helm 1"
+            }
+        }
+    }
+}
