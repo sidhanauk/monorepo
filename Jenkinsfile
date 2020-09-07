@@ -1,17 +1,21 @@
 pipeline {
     agent any
     stages {
-        stage('Example Build: feature2') {
+        stage('Example Build') {
             steps {
-                echo "monorepo"
+                echo "monorepo with feature2"
             }
         }
-        stage('Trigger Helm Charts'){
-            steps{
-                script{
-                    build job: "../Helm-Charts/helm1/${BRANCH_NAME}"
-                }
+        stage('Deploy Helm Charts'){
+          when {
+            branch 'master'
+          }
+          steps{
+            script{
+                build job: "../Helm-Charts/helm1/${BRANCH_NAME}"
+                build job: "../Helm-Charts/helm2/${BRANCH_NAME}"
             }
-        }
-    }
+          }
+      }
+   }
 }
