@@ -5,6 +5,7 @@ pipeline {
             steps {
                 echo "monorepo"
                 script{
+                    echo "inside script block now"
                     def changeLogSets = currentBuild.rawBuild.changeSets
                     for (int i = 0; i < changeLogSets.size(); i++) {
                         def entries = changeLogSets[i].items
