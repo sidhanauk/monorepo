@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Example Build') {
+        stage('Example Build: feature2') {
             steps {
                 echo "monorepo"
             }
