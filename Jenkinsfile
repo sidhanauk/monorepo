@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Example Build') {
             steps {
-                echo "monorepo with feature2++"
+                echo "monorepo with feature2++ new feat"
             }
         }
         stage('Deploy Helm Charts'){
